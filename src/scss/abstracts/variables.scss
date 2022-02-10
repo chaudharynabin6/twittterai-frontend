@@ -1,0 +1,39 @@
+
+// exported using
+// https://www.figma.com/community/plugin/816737626312049592/Export-styles-to-CSS-variables
+/* Color styles */
+$--linear---dark--blue: rgba(52, 71, 103, 1);
+$--linear---grey: rgba(123, 128, 154, 1);
+$--linear---light--grey: rgba(168, 184, 216, 1);
+$--linear---blue: rgba(26, 115, 231, 1);
+$--linear---light--blue: rgba(22, 192, 232, 1);
+$--linear---red: rgba(233, 31, 99, 1);
+$--linear---red--orange: rgba(244, 67, 52, 1);
+$--linear---orange: rgba(251, 140, 0, 1);
+$--linear---green: rgba(76, 175, 80, 1);
+$--linear---light--green: rgba(188, 225, 190, 1);
+$--linear---white: rgba(255, 255, 255, 1);
+$--linear---cloud: rgba(248, 249, 250, 1);
+$--linear---background: rgba(240, 242, 245, 1);
+$--linear---snow: rgba(233, 234, 237, 1);
+$--linear---medium--grey: rgba(222, 226, 232, 1);
+$--linear---dark--snow: rgba(199, 204, 208, 1);
+$--linear---dark--mud: rgba(79, 79, 82, 1);
+$--linear---dark--black: rgba(25, 25, 25, 1);
+
+/* Effect styles */
+$--drop-shadow-black:  0px 2px 6px rgba(0, 0, 0, 0.25);
+$--drop-shadow-green:  0px 2px 6px rgba(79, 169, 83, 0.36);
+$--drop-shadow-red:  0px 2px 6px rgba(220, 34, 101, 0.36);
+$--drop-shadow-blue:  0px 2px 6px rgba(40, 129, 235, 0.36);
+$--drop-shadow-grey:  0px 2px 6px rgba(151, 172, 198, 0.25);
+
+
+//more colors
+
+$--secondary---text--color : #536471;
+$--secondary---background--color:#EFF3F4;
+
+
+// border
+$--border---body:1px solid #DEE2E8;
