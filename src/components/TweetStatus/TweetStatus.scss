@@ -1,0 +1,183 @@
+@import "./../../scss/abstracts/variables.scss";
+.tweetstatus{
+  
+  line-height: 140%;
+  
+  width: 1255rem;
+  height: 400rem;
+  border: $--border---body;
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  &__positive,&__negative,&__fetched,&__analysing{
+
+    // border: $--border---body;
+    width: 302rem;
+    height: 152rem;
+
+    position: relative;
+
+    
+    &-icon{
+
+      position: absolute;
+      top: -18rem;
+      left: 16rem;
+
+      width: 64rem;
+      height: 64rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* Gradients/Black */
+
+      // background: linear-gradient(180deg, #3E3D45 0%, #202020 100%);
+      border-radius: 12rem;
+
+      &__image{
+       
+        // background-color: $--linear---dark--black;
+      }
+    }
+    
+    &-detail{
+      width: 302rem; 
+      height:134rem;
+      border: $--border---body;
+      box-shadow: $--drop-shadow-black;
+    } 
+    &-info{
+      border-bottom: $--border---body;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      padding-right: 14rem;
+      padding-top: 12rem;
+      padding-bottom: 9rem;
+
+    }
+
+    &-heading{
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14rem;
+
+    }
+    &-number{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24rem;
+      color: $--linear---dark--blue;
+
+    }
+
+    &-change{
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16rem;
+
+      padding: 18rem 16rem;
+
+    }
+
+    &-percent{
+      color: $--linear---green;
+      
+    }
+
+   
+
+  }
+
+  
+
+}
+
+
+
+
+ // overide
+
+  
+ .tweetstatus__positive{
+
+        &-icon{
+
+
+
+          background: $--background---positive;
+        
+
+          &__image{
+          
+            background-color: $--background---positive;
+          }
+        }
+        
+        
+
+   
+ }
+
+ .tweetstatus__negative{
+
+        &-icon{
+
+
+        
+          background: $--background---negative;
+        
+
+          &__image{
+          
+            background-color: $--background---negative;
+          }
+        }
+        
+      
+   
+ }
+
+ .tweetstatus__fetched{
+
+        &-icon{
+
+
+
+          background: $--background---fetched;
+        
+
+          &__image{
+          
+            background-color: $--background---fetched;
+          }
+
+        }
+                
+
+   
+ }
+
+ .tweetstatus__analysing{
+
+        &-icon{
+
+
+
+          background: $--background---analysing;
+        
+
+          &__image{
+          
+            background-color: $--background---analysing;
+          }
+        }
+                
+
+   
+ }
+

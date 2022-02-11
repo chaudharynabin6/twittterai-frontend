@@ -37,3 +37,12 @@ $--secondary---background--color:#EFF3F4;
 
 // border
 $--border---body:1px solid #DEE2E8;
+
+
+//background gradient colors of tweets analyzed
+
+$--background---negative: linear-gradient(180deg, #E93B77 0%, #DA1F63 100%);
+$--background---positive: linear-gradient(180deg, #63B967 0%, #4BA64F 100%);
+$--background---total: linear-gradient(180deg, #3E3D45 0%, #202020 100%);
+$--background---fetched: linear-gradient(180deg, #3E3D45 0%, #202020 100%);
+$--background---analysing:linear-gradient(180deg, #439DEE 0%, #1E78E9 100%);
