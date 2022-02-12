@@ -1,0 +1,114 @@
+@import "./../../scss/abstracts/variables.scss";
+
+
+.chart {
+  
+  font-style: normal;
+  line-height: 140%;
+
+  margin-top: 20vh;
+
+  width: 80%;
+  height: 500rem;
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: $--border---body;
+
+  &__dunot,&__positive,&__negative {
+    // for moving up
+    position: relative;
+
+    box-shadow: $--drop-shadow-black;
+
+    width: 410rem;
+    height: 327rem;
+    border: $--border---body;
+
+    &__detail {
+      width: 100%;
+      height: 256rem;
+      // border-bottom: $--border---body;
+      
+      &-bottom-border{
+          content: "";
+        display: table;
+        width: 95%;
+        height: 0px;
+        margin: 0 auto;
+        
+        border-bottom: $--border---body;
+        padding-bottom: 16rem;
+      }
+    }
+
+    &__chart-type {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      padding-top: 204rem;
+      padding-left: 23rem;
+      
+  
+     
+    }
+    &__chart-title {
+      font-weight: 700;
+      font-size: 16rem;
+      padding-bottom: 3rem;
+    }
+    &__chart-description {
+      
+      font-weight:400;
+      font-size: 14rem;
+      
+    }
+
+    &__change {
+      padding-left: 23rem;
+      padding-top: 16rem;
+      padding-bottom: 16rem;
+
+            
+      font-weight:400;
+      font-size: 14rem;
+      
+      display: flex;
+      align-items: center;
+    }
+    &__change-icon {
+      margin-right: 4rem;
+    }
+    // &__change-text {
+    // }
+  }
+}
+
+.dunot-chart,.positive-chart,.negative-chart {
+  width: 378rem;
+  height: 202rem;
+  border: $--border---body;
+
+  // for moving up
+  position: absolute;
+  left: 16rem;
+  top: -24rem;
+
+  box-shadow: $--drop-shadow-black;
+  // background: $--background---negative;
+  border-radius: 8rem;
+}
+
+.dunot-chart{
+  background:$--background---analysing;
+}
+.positive-chart{
+  background: $--background---positive;
+}
+.negative-chart{
+  background: $--background---negative;
+}
