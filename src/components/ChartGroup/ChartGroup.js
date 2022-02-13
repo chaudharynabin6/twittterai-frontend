@@ -1,5 +1,8 @@
 import React from "react";
 
+// components
+import DunotChart from "../DunotChart/DunotChart";
+
 // scss
 import "./ChartGroup.scss";
 // icon
@@ -11,7 +14,7 @@ const ChartGroup = () => {
       <div className="chart">
         {/* dunot */}
         <div className="chart__dunot">
-          <div className="dunot-chart">dunot_cart</div>
+          <div className="dunot-chart"><DunotChart></DunotChart></div>
           <div className="chart__dunot__detail">
             <div className="chart__dunot__chart-type">
               <span className="chart__dunot__chart-title">Dunot Chart</span>

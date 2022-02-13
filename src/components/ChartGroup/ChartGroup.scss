@@ -8,12 +8,14 @@
 
   margin-top: 20vh;
 
-  width: 80%;
+  width: 90%;
   height: 500rem;
+  
  
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 16rem;
   border: $--border---body;
 
   &__dunot,&__positive,&__negative {
@@ -104,7 +106,8 @@
 }
 
 .dunot-chart{
-  background:$--background---analysing;
+  background:$--linear---white;
+  font-size: 14rem;
 }
 .positive-chart{
   background: $--background---positive;
