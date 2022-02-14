@@ -91,6 +91,7 @@
 }
 
 .dunot-chart,.positive-chart,.negative-chart {
+  overflow: hidden;
   width: 378rem;
   height: 202rem;
   border: $--border---body;

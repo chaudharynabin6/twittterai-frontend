@@ -2,6 +2,7 @@ import React from "react";
 
 // components
 import DunotChart from "../DunotChart/DunotChart";
+import TimeSeriesChart from "../TimeSeriesChart/TimeSeriesChart";
 
 // scss
 import "./ChartGroup.scss";
@@ -14,7 +15,9 @@ const ChartGroup = () => {
       <div className="chart">
         {/* dunot */}
         <div className="chart__dunot">
-          <div className="dunot-chart"><DunotChart></DunotChart></div>
+          <div className="dunot-chart">
+            <DunotChart></DunotChart>
+          </div>
           <div className="chart__dunot__detail">
             <div className="chart__dunot__chart-type">
               <span className="chart__dunot__chart-title">Dunot Chart</span>
@@ -37,7 +40,9 @@ const ChartGroup = () => {
         </div>
         {/* positive tweets */}
         <div className="chart__positive">
-          <div className="positive-chart">positive_cart</div>
+          <div className="positive-chart">
+            <TimeSeriesChart></TimeSeriesChart>
+          </div>
           <div className="chart__positive__detail">
             <div className="chart__positive__chart-type">
               <span className="chart__positive__chart-title">
@@ -61,7 +66,9 @@ const ChartGroup = () => {
           </div>
         </div>
         <div className="chart__negative">
-          <div className="negative-chart">negative_cart</div>
+          <div className="negative-chart">
+            <TimeSeriesChart></TimeSeriesChart>
+          </div>
           <div className="chart__negative__detail">
             <div className="chart__negative__chart-type">
               <span className="chart__negative__chart-title">
