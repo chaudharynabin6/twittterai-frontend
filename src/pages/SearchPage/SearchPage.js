@@ -7,6 +7,9 @@ import arrow_back from "./../../assets/icons/arrow_back.svg";
 import search from "./../../assets/icons/search.svg";
 import cancel from "./../../assets/icons/cancel.svg";
 import more_horiz from "./../../assets/icons/more_horiz.svg";
+import verified from "./../../assets/icons/verified.svg";
+
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 // images
 import elon_musk from "./../../assets/images/elon_musk.jpg";
@@ -34,7 +37,10 @@ const SearchPage = () => {
             <div className="celebrity">
               <img src={elon_musk} alt="" className="celebrity__img" />
               <div className="celebrity__detail">
-                <h3 className="celebrity__name">Elon Musk</h3>
+                <div className="celebrity__name">
+                  <span>Elon Musk</span>
+                  <CheckCircleIcon className="celebrity__verified-icon" />
+                </div>
                 <p className="celebrity__username">@elonmusk</p>
               </div>
               <button className="celebrity__follow">Follow</button>
