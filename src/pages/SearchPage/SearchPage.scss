@@ -54,6 +54,7 @@
   }
   &>input{
     width: -webkit-fill-available;
+    width: -moz-available;
     padding: 5rem;
     height: 41rem;
     border: none;
@@ -125,6 +126,7 @@
 
   &__detail{
     width: -webkit-fill-available;
+    width: -moz-available;
     padding: 0 12rem;
     
   }
