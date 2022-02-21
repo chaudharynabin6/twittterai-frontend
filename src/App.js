@@ -28,8 +28,7 @@ import elon_musk from "./assets/images/elon_musk.jpg";
 import jeff_bezos from "./assets/images/jeff_bezos.jpg";
 
 // pages
-import SearchPage from "./pages/SearchPage/SearchPage";
-
+import SearchPage from "./pages/SearchPage";
 // components
 import TopBar from "./components/TopBar/TopBar";
 import TweetStatus from "./components/TweetStatus/TweetStatus";
