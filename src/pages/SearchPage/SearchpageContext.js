@@ -66,27 +66,33 @@ const SearchPageProvider = ({ children }) => {
 
   // done: send isAnalysing and all data  of the twitter user
   // when the searchedUsers state changes
-  useEffect(async () => {
-    if (state.searchedUsers.length > 0) {
-      let url = `http://${DOMAIN}/search/user/`;
-      const res = await axios.patch(url, state.searchedUsers);
-    }
+  useEffect(() => {
+    const patchData = async () => {
+      if (state.searchedUsers.length > 0) {
+        let url = `http://${DOMAIN}/search/user/`;
+        const res = await axios.patch(url, state.searchedUsers);
+      }
+    };
+    patchData();
   }, [state.searchedUsers]);
 
   //done:when the component first render
   // at the first render fetch all the twitter user by thier id
   // and merge the isAnalysing state together
 
-  useEffect(async () => {
-    let url = `http://${DOMAIN}/search/user/`;
-    const res = await axios.get(url);
+  useEffect(() => {
+    const fetchAllUsers = async () => {
+      let url = `http://${DOMAIN}/search/user/`;
+      const res = await axios.get(url);
 
-    console.log(res.data);
-    let searchedUsers = res.data;
-    dispatch({
-      type: "FETCH_ALL_SEARCHED_USERS",
-      payload: { searchedUsers },
-    });
+      console.log(res.data);
+      let searchedUsers = res.data;
+      dispatch({
+        type: "FETCH_ALL_SEARCHED_USERS",
+        payload: { searchedUsers },
+      });
+    };
+    fetchAllUsers();
   }, []);
 
   return (
