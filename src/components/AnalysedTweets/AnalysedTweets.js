@@ -1,17 +1,18 @@
-// react stuff
-import React from 'react'
+// global
+import React from "react";
+import classNames from "classnames";
+// icons @mui
+import SentimentDissatisfiedRoundedIcon from "@mui/icons-material/SentimentDissatisfiedRounded";
+import SentimentSatisfiedAltRoundedIcon from "@mui/icons-material/SentimentSatisfiedAltRounded";
+
 // scss
-import "./AnalysedTweets.scss"
+import "./AnalysedTweets.scss";
 
-// icons
-import notification from "./../../assets/icons/notification.svg";
-import home_breadcrumbs from "./../../assets/icons/home_breadcrumbs.svg";
-
-
-const AnalysedTweets = () => {
+const AnalysedTweets = (props) => {
+  const { analysed_tweets } = props;
   return (
     <>
-    <div className="analysed-tweets">
+      <div className="analysed-tweets">
         <div className="tweet tweet--head">
           <span
             alt=""
@@ -21,71 +22,62 @@ const AnalysedTweets = () => {
             Status
           </span>
           <span className="tweet__text tweet__text--head">Tweet</span>
-          <span className="tweet__date tweet__date--head">Date</span>
+          <span className="tweet__date tweet__date--head">Tweet ID</span>
         </div>
-        <div className="tweet">
-          <img
-            src={home_breadcrumbs}
-            alt=""
-            className={
-              0
-                ? "tweet__sentiment-icon" +
-                  " " +
-                  "tweet__sentiment-icon--postive"
-                : "tweet__sentiment-icon" +
-                  " " +
-                  "tweet__sentiment-icon--negative"
-            }
-          />
-          <span
-            className={
-              0
-                ? "tweet__sentiment-status" +
-                  " " +
-                  "tweet__sentiment-status--postive"
-                : "tweet__sentiment-status" +
-                  " " +
-                  "tweet__sentiment-status--negative"
-            }
-          >
-            Postive
-          </span>
-          <span className="tweet__text">Good morning every one</span>
-          <span className="tweet__date">Dec 2, 2019</span>
-        </div>
-        <div className="tweet">
-          <img
-            src={notification}
-            alt=""
-            className={
-              1
-                ? "tweet__sentiment-icon" +
-                  " " +
-                  "tweet__sentiment-icon--postive"
-                : "tweet__sentiment-icon" +
-                  " " +
-                  "tweet__sentimnet-icon--negative"
-            }
-          />
-          <span
-            className={
-              1
-                ? "tweet__sentiment-status" +
-                  " " +
-                  "tweet__sentiment-status--postive"
-                : "tweet__sentiment-status" +
-                  " " +
-                  "tweet__sentimnet-status--negative"
-            }
-          >
-            Postive
-          </span>
-          <span className="tweet__text">Good morning every one</span>
-          <span className="tweet__date">Dec 2, 2019</span>
+        <div className="analysed-tweets__container">
+          {analysed_tweets.map((item, index) => {
+            return (
+              <div key={item.id} className="tweet">
+                {/* <img
+                src={home_breadcrumbs}
+                alt=""
+                className={classNames({
+                  "tweet__sentiment-icon": true,
+                  "tweet__sentiment-icon--positive": item.label === "POSITIVE",
+                  "tweet__sentiment-icon--negative": item.label === "NEGATIVE",
+                })}
+              /> */}
+                {item.label === "POSITIVE" ? (
+                  <SentimentSatisfiedAltRoundedIcon
+                    className={classNames({
+                      "tweet__sentiment-icon": true,
+                      "tweet__sentiment-icon--positive":
+                        item.label === "POSITIVE",
+                      "tweet__sentiment-icon--negative":
+                        item.label === "NEGATIVE",
+                    })}
+                  />
+                ) : (
+                  <SentimentDissatisfiedRoundedIcon
+                    className={classNames({
+                      "tweet__sentiment-icon": true,
+                      "tweet__sentiment-icon--positive":
+                        item.label === "POSITIVE",
+                      "tweet__sentiment-icon--negative":
+                        item.label === "NEGATIVE",
+                    })}
+                  />
+                )}
+                <span
+                  className={classNames({
+                    "tweet__sentiment-status": true,
+                    "tweet__sentiment-status--positive":
+                      item.label === "POSITIVE",
+                    "tweet__sentiment-status--negative":
+                      item.label === "NEGATIVE",
+                  })}
+                >
+                  {item.label}
+                </span>
+                <span className="tweet__text">{item.text}</span>
+                <span className="tweet__date">{item.tweet_id}</span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AnalysedTweets
+export default AnalysedTweets;

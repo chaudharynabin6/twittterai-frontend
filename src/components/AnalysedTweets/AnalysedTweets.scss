@@ -2,11 +2,15 @@
 
 .analysed-tweets{
   margin-top: 40vh;
-  width: 1278rem;
-  height: 478;
+  // width: 1278rem;
   border: $--border---body;
   border-radius: 8rem;
   box-shadow: $--drop-shadow-black;
+
+  &__container{
+  height: 235rem;
+  overflow-y: scroll;
+  }
 }
 
 .tweet{
@@ -29,18 +33,18 @@
   }
 
   &__sentiment-icon{
-    color: $--linear---red;
-    width: 16rem;
-    height: 16rem;
+    font-size: 16rem !important;
+    width: 16rem !important;
+    height: 16rem !important;
     margin:0 16rem;
     margin-left: 0;
     display: inline;
 
-    &--postive{
-      fill: $--linear---green;
+    &--positive{
+      color: $--linear---green !important;
     }
     &--negative{
-      fill: $--linear---red;
+      color: $--linear---red !important;
     }
   }
 
