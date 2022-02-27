@@ -9,7 +9,8 @@ import "./ChartGroup.scss";
 // icon
 import clock_outline from "./../../assets/icons/clock_outline.svg";
 
-const ChartGroup = () => {
+const ChartGroup = (props) => {
+  const { total_summary } = props;
   return (
     <>
       <div className="chart">
@@ -46,10 +47,10 @@ const ChartGroup = () => {
           <div className="chart__positive__detail">
             <div className="chart__positive__chart-type">
               <span className="chart__positive__chart-title">
-                positive Chart
+                Positive and Negative Chart
               </span>
               <span className="chart__positive__chart-description">
-                Postive and Negative Tweets
+                Time series chart of positive and negative chart
               </span>
             </div>
             <div className="chart__positive__detail-bottom-border"></div>
@@ -65,7 +66,7 @@ const ChartGroup = () => {
             </div>
           </div>
         </div>
-        <div className="chart__negative">
+        {/* <div className="chart__negative">
           <div className="negative-chart">
             <TimeSeriesChart></TimeSeriesChart>
           </div>
@@ -90,7 +91,7 @@ const ChartGroup = () => {
               </span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

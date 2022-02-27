@@ -13,14 +13,7 @@ import { format, parseISO, subDays } from "date-fns";
 
 // scss
 import "./TimeSeriesChart.scss";
-const data = [];
-for (let num = 30; num >= 0; num--) {
-  data.push({
-    date: subDays(new Date(), num).toISOString().substr(0, 10),
-    positive: 1 + Math.random(),
-    negative: 1 - Math.random(),
-  });
-}
+import { useDashboardPageContext } from "../../pages/DashboardPage/Dashboard.context";
 
 function CustomTooltip({ active, payload, label }) {
   if (active) {
@@ -36,6 +29,21 @@ function CustomTooltip({ active, payload, label }) {
 }
 
 const TimeSeriesChart = () => {
+  let { time_series_summary } = useDashboardPageContext();
+
+  time_series_summary.sort((a, b) => {
+    return a.position - b.position;
+  });
+
+  time_series_summary = time_series_summary.map((item) => {
+    const { date, positive, negative } = item;
+    return {
+      date,
+      positive,
+      negative,
+    };
+  });
+
   return (
     <>
       <ResponsiveContainer
@@ -43,7 +51,7 @@ const TimeSeriesChart = () => {
         height="100%"
         className="chart-positive-negative-container"
       >
-        <AreaChart data={data}>
+        <AreaChart data={time_series_summary}>
           <defs>
             <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#2451B7" stopOpacity={0.4} />

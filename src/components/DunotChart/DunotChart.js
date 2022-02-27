@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
+import { useDashboardPageContext } from "../../pages/DashboardPage/Dashboard.context";
 
 // scss
 import "./DunotChart.scss";
@@ -11,11 +12,6 @@ let $_linear_green = "rgba(76, 175, 80, 1)";
 let $_linear_white = "rgba(255, 255, 255, 1)";
 let $_border_body = "1px solid #DEE2E8";
 let $_linear_dark_black = "rgba(25, 25, 25, 1)";
-
-const data = [
-  { name: "Positive", value: 400 },
-  { name: "Negative", value: 300 },
-];
 
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
@@ -102,7 +98,12 @@ const renderActiveShape = (props) => {
   );
 };
 
-const DunotChart = () => {
+const DunotChart = (props) => {
+  const { total_summary } = useDashboardPageContext();
+  const data = [
+    { name: "Positive", value: total_summary.positive },
+    { name: "Negative", value: total_summary.negative },
+  ];
   let [state, setState] = useState({
     activeIndex: 0,
   });
