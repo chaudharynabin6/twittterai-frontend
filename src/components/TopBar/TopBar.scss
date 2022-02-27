@@ -16,7 +16,11 @@ align-items: center;
 
 
   
-
+  &-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   &__page-info{}
 
   &__page{

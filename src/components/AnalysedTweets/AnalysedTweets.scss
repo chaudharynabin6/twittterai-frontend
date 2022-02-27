@@ -1,13 +1,22 @@
 @import "./../../scss/abstracts/variables.scss";
 
 .analysed-tweets{
-  margin-top: 40vh;
-  // width: 1278rem;
+
+  width: 1278rem;
+
   border: $--border---body;
   border-radius: 8rem;
   box-shadow: $--drop-shadow-black;
-
-  &__container{
+  
+  &-container{
+    width: 100%;
+    padding: 16rem 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__scroll-view{
   height: 235rem;
   overflow-y: scroll;
   }

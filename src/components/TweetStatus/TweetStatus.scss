@@ -3,14 +3,21 @@
   
   line-height: 140%;
   
-  width: 1255rem;
-  height: 400rem;
-  border: $--border---body;
-  margin-top: 20%;
+  width: 1276rem;
+  // height: 250rem;
+  // border: $--border---body;
+  // margin-top: 20%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   
+  &-container{
+    width: 100%;
+    margin-top: 20rem;
+    padding: 16rem 0;
+    display: flex;
+    justify-content: center;
+  }
   &__positive,&__negative,&__fetched,&__analysing{
 
     // border: $--border---body;

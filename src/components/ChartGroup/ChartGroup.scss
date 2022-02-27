@@ -3,21 +3,26 @@
 
 .chart {
   
+  
   font-style: normal;
   line-height: 140%;
 
-  margin-top: 20vh;
 
-  width: 90%;
-  height: 500rem;
+  width: 1276rem;
   
  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16rem;
-  border: $--border---body;
+  padding: 16rem 0;
+  // border: $--border---body;
 
+  &-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &__dunot,&__positive,&__negative {
     // for moving up
     position: relative;
