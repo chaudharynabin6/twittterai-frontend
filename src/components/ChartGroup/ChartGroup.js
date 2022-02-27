@@ -2,15 +2,17 @@ import React from "react";
 
 // components
 import DunotChart from "../DunotChart/DunotChart";
-import TimeSeriesChart from "../TimeSeriesChart/TimeSeriesChart";
+import {
+  NegativeTimeSeriesChart,
+  PositiveTimeSeriesChart,
+} from "../TimeSeriesChart";
 
 // scss
 import "./ChartGroup.scss";
 // icon
 import clock_outline from "./../../assets/icons/clock_outline.svg";
 
-const ChartGroup = (props) => {
-  const { total_summary } = props;
+const ChartGroup = () => {
   return (
     <>
       <section className="chart-container">
@@ -43,7 +45,7 @@ const ChartGroup = (props) => {
           {/* positive tweets */}
           <div className="chart__positive">
             <div className="positive-chart">
-              <TimeSeriesChart></TimeSeriesChart>
+              <PositiveTimeSeriesChart />
             </div>
             <div className="chart__positive__detail">
               <div className="chart__positive__chart-type">
@@ -69,7 +71,7 @@ const ChartGroup = (props) => {
           </div>
           <div className="chart__negative">
             <div className="negative-chart">
-              <TimeSeriesChart></TimeSeriesChart>
+              <NegativeTimeSeriesChart />
             </div>
             <div className="chart__negative__detail">
               <div className="chart__negative__chart-type">
