@@ -1,6 +1,9 @@
 import React from "react";
 
 // local import
+
+// scss
+import "./Dashboard.scss"
 // components
 
 import AnalysedTweets from "../../components/AnalysedTweets/AnalysedTweets";
@@ -13,9 +16,11 @@ const DashboardPresentor = () => {
 
   return (
     <>
-      <TweetStatus />
-      <ChartGroup />
-      <AnalysedTweets analysed_tweets={analysed_tweets} />
+      <div className="dashboard-page">
+        <TweetStatus />
+        <ChartGroup />
+        <AnalysedTweets analysed_tweets={analysed_tweets} />
+      </div>
     </>
   );
 };

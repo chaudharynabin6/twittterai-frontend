@@ -23,6 +23,8 @@ import notification from "./assets/icons/notification.svg";
 import positive from "./assets/icons/positive.svg";
 
 import clock_outline from "./assets/icons/clock_outline.svg";
+// external icons
+
 // images
 import elon_musk from "./assets/images/elon_musk.jpg";
 import jeff_bezos from "./assets/images/jeff_bezos.jpg";
@@ -36,11 +38,24 @@ import ChartGroup from "./components/ChartGroup/ChartGroup";
 import DunotChart from "./components/DunotChart/DunotChart";
 import TimeSeriesChart from "./components/TimeSeriesChart/TimeSeriesChart";
 import AnalysedTweets from "./components/AnalysedTweets/AnalysedTweets";
+import DashboardPage from "./pages/DashboardPage";
+import Navbar from "./components/Navbar/Navbar";
+
 
 function App() {
   return (
-    <div className="App">
-      <SearchPage></SearchPage>
+      <div className="App">
+          <TopBar />
+      <div className="app-container">
+          <div className="navigation">
+          <Navbar/>
+          </div>
+        <div className="main">
+          <DashboardPage />
+        </div>
+      </div>
+      {/* <SearchPage /> */}
+      
     </div>
   );
 }

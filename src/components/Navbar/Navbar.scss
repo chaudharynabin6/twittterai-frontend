@@ -1,0 +1,102 @@
+@import "./../../scss/abstracts/variables.scss";
+.navbar{
+  width: 266rem;
+//   height: 591rem;
+
+  font-size: 32rem;
+  line-height: 1.6;
+  font-weight: 200;
+//   border: $--border---body;
+  padding-top: 16rem;
+  padding-right: 16rem;
+
+  &__logo{
+    
+    color: $--linear---blue;
+    font-size: 32rem !important;
+    &-container{
+        padding-left: 16rem;
+    }
+  }
+
+  &__items{
+      padding: 8rem 0;
+
+  }
+
+  &__item{
+    
+    
+      display: flex;
+      align-items: center;
+      padding-left: 16rem;
+      border-top-right-radius: 32rem 32rem;
+      border-bottom-right-radius: 32rem 32rem;
+    &:hover{
+          background-color: $--secondary---background--color;
+    }
+    &__icon{
+
+      &--active{
+        color: $--linear---blue;
+      }
+      font-size: 32rem !important;
+      &-container{
+        padding-right: 16rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+    }
+    &__name{
+      padding-left: 16rem;
+    }
+  }
+
+  
+}
+
+.twitter-user{
+    
+    &-container{
+        padding-bottom: 16rem;
+        padding-left: 16rem;
+        
+        
+    }
+
+    &__img{
+        width: 32rem;
+        height: 32rem;
+        clip-path: circle(16rem at center);
+        &-container{
+            box-sizing: content-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32rem;
+            height: 32rem;
+            border-radius: 50%;
+            // overflow: hidden;
+            transition: all .2s ease-in;
+            border: 3px solid $--linear---grey;
+            &:hover{
+
+                border: 3px solid $--linear---blue; 
+            }
+        }
+    }
+
+    &__name{
+        font-size: 16rem;
+    }
+}
+
+
+.util__border{
+    width: 100%;
+    margin: 0 auto;
+    border: $--border---body;
+}
