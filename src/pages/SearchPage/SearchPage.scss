@@ -2,7 +2,8 @@
 
 
 .search{
-  width: 630rem;
+  // width: 630rem;
+  width: 1276rem;
   margin:0 auto;
   margin-top: 20rem;
 
@@ -206,6 +207,9 @@
        &:hover{
          background-color: lighten($--linear---green,  .25);
        }
+     }
+     &--protected{
+       background-color: $--linear---snow;
      }
   }
 

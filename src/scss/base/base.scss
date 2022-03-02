@@ -1,3 +1,4 @@
+@import "./../abstracts/variables.scss";
 *,
 *::after,
 *::before {
@@ -14,4 +15,15 @@ html {
 
 body {
     box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $--secondary---text--color;
+  &:visited{
+    color: $--secondary---text--color;
+  }
+  &:active{
+    color: $--linear---blue;
+  }
 }

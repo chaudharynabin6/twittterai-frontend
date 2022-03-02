@@ -10,6 +10,8 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
+// routers
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import { format, parseISO, subDays } from "date-fns";
 // icons
 import arrow_back from "./assets/icons/arrow_back.svg";
@@ -44,18 +46,29 @@ import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-      <div className="App">
-          <TopBar />
-      <div className="app-container">
-          <div className="navigation">
-          <Navbar/>
-          </div>
-        <div className="main">
-          <DashboardPage />
+    <div className="App">
+      <Router>
+        <TopBar />
+          <div className="app-container">
+            <div className="navigation">
+              <Navbar/>
+            </div>
+        <Switch>
+          <Route  path="/analytics/:user">
+              <div className="main">
+                <DashboardPage />
+              </div>
+          </Route>
+        </Switch>
+        <Switch>
+          <Route exact path="/search">
+              <div className="main">
+                <SearchPage />
+              </div>
+          </Route>
+        </Switch>
         </div>
-      </div>
-      {/* <SearchPage /> */}
-      
+      </Router>
     </div>
   );
 }

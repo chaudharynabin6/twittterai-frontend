@@ -2,6 +2,9 @@
 import axios from "axios";
 import React, { useReducer, useContext, useEffect } from "react";
 
+// router
+import { useParams } from "react-router-dom";
+
 // local import
 import DashboardReducer from "./Dashboard.reducer";
 
@@ -14,13 +17,23 @@ const DashboardContext = React.createContext();
 const initialState = {
   loading: false,
   analysed_tweets: [],
-  user: 783214,
+  user: -1,
   total_summary: {},
   time_series_summary: [],
 };
 
 const DashboardProvider = ({ children }) => {
   const [state, dispatch] = useReducer(DashboardReducer, initialState);
+  const {user} = useParams();
+  // setuser
+  useEffect(()=>{
+    console.log(user)
+    dispatch({
+      type: "SET_USER",
+      payload: { user },
+    });
+  },[user])
+
   // fetching analysed tweets
   useEffect(() => {
     const fetch_analyed_tweets = async () => {
@@ -34,7 +47,10 @@ const DashboardProvider = ({ children }) => {
         payload: { analysed_tweets },
       });
     };
-    fetch_analyed_tweets();
+    if(state.user !== -1){
+
+      fetch_analyed_tweets();
+    }
   }, [state.user]);
   // fetch total summary of current user
   useEffect(() => {
@@ -49,7 +65,10 @@ const DashboardProvider = ({ children }) => {
         payload: { total_summary },
       });
     };
-    fetch_total_summary();
+    if(state.user !== -1){
+
+      fetch_total_summary(); 
+    }
   }, [state.user]);
 
   // fetch time series summary of current user
@@ -65,7 +84,10 @@ const DashboardProvider = ({ children }) => {
         payload: { time_series_summary },
       });
     };
-    fetch_time_series_summary();
+    if(state.user !== -1){
+
+      fetch_time_series_summary();
+    }
   }, [state.user]);
   return (
     <DashboardContext.Provider

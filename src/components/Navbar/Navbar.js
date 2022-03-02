@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 // css
 import "./Navbar.scss";
 //icons
@@ -24,18 +24,22 @@ const Navbar = () => {
         </div>
         <div className="util__border"></div>
         <div className="navbar__items">
-          <div className="navbar__item">
-            <label className="navbar__item__icon-container">
-              <PersonSearchIcon className="navbar__item__icon" />
-            </label>
-            <label className="navbar__item__name">Search</label>
-          </div>
-          <div className="navbar__item">
-            <label className="navbar__item__icon-container">
-              <AnalyticsIcon className="navbar__item__icon" />
-            </label>
-            <label className="navbar__item__name">Dashboard</label>
-          </div>
+          <Link to={"/search"}>
+            <div className="navbar__item">
+              <label className="navbar__item__icon-container">
+                <PersonSearchIcon className="navbar__item__icon" />
+              </label>
+              <label className="navbar__item__name">Search</label>
+            </div>
+          </Link>
+          <Link to="/dashboard">
+            <div className="navbar__item">
+              <label className="navbar__item__icon-container">
+                <AnalyticsIcon className="navbar__item__icon" />
+              </label>
+              <label className="navbar__item__name">Dashboard</label>
+            </div>
+          </Link>
         </div>
       </div>
     </>

@@ -1,4 +1,7 @@
 const DashboardReducer = (state, action) => {
+  if (action.type === "SET_USER") {
+    return { ...state, user: action.payload.user };
+  }
   if (action.type === "FETCH_ANALYSED_TWEETS") {
     return { ...state, analysed_tweets: action.payload.analysed_tweets };
   }

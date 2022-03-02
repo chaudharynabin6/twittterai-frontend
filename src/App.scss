@@ -21,8 +21,11 @@
   
 }
 .main{
-  width: 1520rem;
+  // width: 1520rem;
+  width: -moz-available;
+  width:  -webkit-fill-available;
+  width: stretch;
   margin-left: 32rem;
   display: flex;
-  justify-content: start;
+  justify-content: center;
 }
