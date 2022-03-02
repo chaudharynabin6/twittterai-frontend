@@ -32,12 +32,12 @@ const Navbar = () => {
               <label className="navbar__item__name">Search</label>
             </div>
           </Link>
-          <Link to="/dashboard">
+          <Link to="/bargraph">
             <div className="navbar__item">
               <label className="navbar__item__icon-container">
                 <AnalyticsIcon className="navbar__item__icon" />
               </label>
-              <label className="navbar__item__name">Dashboard</label>
+              <label className="navbar__item__name">Bargraph</label>
             </div>
           </Link>
         </div>

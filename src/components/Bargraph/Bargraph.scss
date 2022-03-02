@@ -1,0 +1,16 @@
+@import "./../../scss/abstracts/variables";
+
+.bargraph{
+    width: 1278rem;
+    height: 80vh;
+    border: $--border---body;
+    
+
+    &__tooltip{
+        font-size: 10rem;
+        width: 200rem;
+        height: 200rem;
+        background-color: transparent;
+        // background-color: red;
+    }
+}

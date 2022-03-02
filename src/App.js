@@ -42,31 +42,38 @@ import TimeSeriesChart from "./components/TimeSeriesChart/TimeSeriesChart";
 import AnalysedTweets from "./components/AnalysedTweets/AnalysedTweets";
 import DashboardPage from "./pages/DashboardPage";
 import Navbar from "./components/Navbar/Navbar";
-
+import Bargraph from "./components/Bargraph/Bargraph";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <TopBar />
-          <div className="app-container">
-            <div className="navigation">
-              <Navbar/>
-            </div>
-        <Switch>
-          <Route  path="/analytics/:user">
+        <div className="app-container">
+          <div className="navigation">
+            <Navbar />
+          </div>
+          <Switch>
+            <Route path="/analytics/:user">
               <div className="main">
                 <DashboardPage />
               </div>
-          </Route>
-        </Switch>
-        <Switch>
-          <Route exact path="/search">
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/search">
               <div className="main">
                 <SearchPage />
               </div>
-          </Route>
-        </Switch>
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/bargraph">
+              <div className="main">
+                <Bargraph />
+              </div>
+            </Route>
+          </Switch>
         </div>
       </Router>
     </div>
