@@ -28,7 +28,9 @@ const TweetStatus = () => {
             <div className="tweetstatus__positive-detail">
               <div className="tweetstatus__positive-info">
                 <span className="tweetstatus__positive-heading">Positive</span>
-                <span className="tweetstatus__positive-number">{positive}</span>
+                <span className="tweetstatus__positive-number">
+                  {positive || 0}
+                </span>
               </div>
               <div className="tweetstatus__positive-change">
                 <samp className="tweetstatus__positive-percent">+55%</samp> than
@@ -48,7 +50,9 @@ const TweetStatus = () => {
             <div className="tweetstatus__negative-detail">
               <div className="tweetstatus__negative-info">
                 <span className="tweetstatus__negative-heading">negative</span>
-                <span className="tweetstatus__negative-number">{negative}</span>
+                <span className="tweetstatus__negative-number">
+                  {negative || 0}
+                </span>
               </div>
               <div className="tweetstatus__negative-change">
                 <samp className="tweetstatus__negative-percent">+55%</samp> than
@@ -69,7 +73,7 @@ const TweetStatus = () => {
               <div className="tweetstatus__fetched-info">
                 <span className="tweetstatus__fetched-heading">fetched</span>
                 <span className="tweetstatus__fetched-number">
-                  {total_fetched}
+                  {total_fetched || 0}
                 </span>
               </div>
               <div className="tweetstatus__fetched-change">
@@ -90,7 +94,9 @@ const TweetStatus = () => {
             <div className="tweetstatus__analysing-detail">
               <div className="tweetstatus__analysing-info">
                 <span className="tweetstatus__analysing-heading">analysed</span>
-                <span className="tweetstatus__analysing-number">{total}</span>
+                <span className="tweetstatus__analysing-number">
+                  {total || 0}
+                </span>
               </div>
               <div className="tweetstatus__analysing-change">
                 <samp className="tweetstatus__analysing-percent">+55%</samp>{" "}

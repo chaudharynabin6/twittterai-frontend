@@ -26,7 +26,7 @@ const ChartGroup = () => {
               <div className="chart__dunot__chart-type">
                 <span className="chart__dunot__chart-title">Dunot Chart</span>
                 <span className="chart__dunot__chart-description">
-                  Postive and Negative Tweets
+                  Postive and Negative Tweets Dunot Chart
                 </span>
               </div>
               <div className="chart__dunot__detail-bottom-border"></div>
@@ -50,10 +50,10 @@ const ChartGroup = () => {
             <div className="chart__positive__detail">
               <div className="chart__positive__chart-type">
                 <span className="chart__positive__chart-title">
-                  Positive and Negative Chart
+                  Positive Tweet Chart
                 </span>
                 <span className="chart__positive__chart-description">
-                  Time series chart of positive and negative chart
+                  Time series positive Tweet
                 </span>
               </div>
               <div className="chart__positive__detail-bottom-border"></div>
@@ -64,7 +64,7 @@ const ChartGroup = () => {
                   className="chart__positive__change-icon"
                 />
                 <span className="chart__positive__change-text">
-                  positive chart updated since 2 day ago
+                  Positive chart updated since 2 day ago
                 </span>
               </div>
             </div>
@@ -76,10 +76,10 @@ const ChartGroup = () => {
             <div className="chart__negative__detail">
               <div className="chart__negative__chart-type">
                 <span className="chart__negative__chart-title">
-                  negative Chart
+                  Negative Tweet Chart
                 </span>
                 <span className="chart__negative__chart-description">
-                  Postive and Negative Tweets
+                  Time Series Negative Tweets
                 </span>
               </div>
               <div className="chart__negative__detail-bottom-border"></div>
@@ -90,7 +90,7 @@ const ChartGroup = () => {
                   className="chart__negative__change-icon"
                 />
                 <span className="chart__negative__change-text">
-                  negative chart updated since 2 day ago
+                  Negative chart updated since 2 day ago
                 </span>
               </div>
             </div>
