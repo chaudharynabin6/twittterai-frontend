@@ -29,10 +29,7 @@ const SearchPagePresentor = () => {
     toggleAnalysing,
     deleteSearchedUser,
   } = useSearchPageContext();
-  useEffect(() => {
-    console.log(currentSearchUser);
-    console.log(searchedUsers);
-  }, []);
+
   const searchInput = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
