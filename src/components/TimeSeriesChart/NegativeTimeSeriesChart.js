@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   ResponsiveContainer,
@@ -30,7 +30,16 @@ function CustomTooltip({ active, payload, label }) {
 
 const NegativeTimeSeriesChart = () => {
   let { time_series_summary } = useDashboardPageContext();
-
+  const [isEmpty, setIsEmpty] = useState(true);
+  useEffect(() => {
+    if (time_series_summary.length === 0) {
+      setIsEmpty(true);
+      console.log("empty");
+    } else {
+      setIsEmpty(false);
+      console.log("not empty");
+    }
+  }, [time_series_summary]);
   time_series_summary.sort((a, b) => {
     return a.position - b.position;
   });
@@ -51,31 +60,33 @@ const NegativeTimeSeriesChart = () => {
         height="100%"
         className="chart-positive-negative-container"
       >
-        <AreaChart data={time_series_summary}>
-          <defs>
-            <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#2451B7" stopOpacity={0.4} />
-              <stop offset="75%" stopColor="#2451B7" stopOpacity={0.05} />
-            </linearGradient>
-          </defs>
+        {isEmpty ? (
+          <AreaChart data={[]}>
+            <defs>
+              <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#2451B7" stopOpacity={0.4} />
+                <stop offset="75%" stopColor="#2451B7" stopOpacity={0.05} />
+              </linearGradient>
+            </defs>
 
-          {/* <Area dataKey="positive" stroke="#2451B7" fill="url(#color)" /> */}
-          <Area dataKey="negative" stroke="#24ffB7" fill="url(#color)" />
+            {/* <Area dataKey="positive" stroke="#2451B7" fill="url(#color)" /> */}
 
-          <XAxis
-            dataKey="date"
-            axisLine={false}
-            tickLine={false}
-            tickFormatter={(str) => {
-              const date = parseISO(str);
-              if (date.getDate() % 7 === 0) {
-                return format(date, "MMM, d");
-              }
-              return "";
-            }}
-          />
+            {/* <Area dataKey="negative" stroke="#24ffB7" fill="url(#color)" /> */}
 
-          {/* <YAxis
+            {/* <XAxis
+              dataKey="date"
+              axisLine={false}
+              tickLine={false}
+              tickFormatter={(str) => {
+                const date = parseISO(str);
+                if (date.getDate() % 7 === 0) {
+                  return format(date, "MMM, d");
+                }
+                return "";
+              }}
+            /> */}
+
+            {/* <YAxis
             datakey="positive"
             axisLine={false}
             tickLine={false}
@@ -84,10 +95,50 @@ const NegativeTimeSeriesChart = () => {
             tickFormatter={(number) => ``}
           /> */}
 
-          <Tooltip content={<CustomTooltip />} />
+            {/* <Tooltip content={<CustomTooltip />} /> */}
 
-          <CartesianGrid opacity={0.1} vertical={false} />
-        </AreaChart>
+            <CartesianGrid opacity={0.1} vertical={false} />
+          </AreaChart>
+        ) : (
+          <AreaChart data={time_series_summary}>
+            <defs>
+              <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#2451B7" stopOpacity={0.4} />
+                <stop offset="75%" stopColor="#2451B7" stopOpacity={0.05} />
+              </linearGradient>
+            </defs>
+
+            {/* <Area dataKey="positive" stroke="#2451B7" fill="url(#color)" /> */}
+
+            <Area dataKey="negative" stroke="#24ffB7" fill="url(#color)" />
+
+            <XAxis
+              dataKey="date"
+              axisLine={false}
+              tickLine={false}
+              tickFormatter={(str) => {
+                const date = parseISO(str);
+                if (date.getDate() % 7 === 0) {
+                  return format(date, "MMM, d");
+                }
+                return "";
+              }}
+            />
+
+            {/* <YAxis
+            datakey="positive"
+            axisLine={false}
+            tickLine={false}
+            tickCount={8}
+            // tickFormatter={(number) => `${number.toFixed(2)}`}
+            tickFormatter={(number) => ``}
+          /> */}
+
+            <Tooltip content={<CustomTooltip />} />
+
+            <CartesianGrid opacity={0.1} vertical={false} />
+          </AreaChart>
+        )}
       </ResponsiveContainer>
     </>
   );
