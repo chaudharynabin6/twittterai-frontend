@@ -37,55 +37,73 @@ const DashboardProvider = ({ children }) => {
   // fetching analysed tweets
   useEffect(() => {
     const fetch_analyed_tweets = async () => {
-      let url = `http://${DOMAIN}/tweet-manager/analysed-tweets/${state.user}`;
-      let res = await axios.get(url);
+      try {
+        let url = `http://${DOMAIN}/tweet-manager/analysed-tweets/${state.user}`;
+        let res = await axios.get(url);
 
-      let analysed_tweets = res.data;
+        let analysed_tweets = res.data;
 
-      dispatch({
-        type: "FETCH_ANALYSED_TWEETS",
-        payload: { analysed_tweets },
-      });
+        dispatch({
+          type: "FETCH_ANALYSED_TWEETS",
+          payload: { analysed_tweets },
+        });
+      } catch (error) {
+        console.log(
+          "🚀 ~ file: Dashboard.context.js ~ line 53 ~ constfetch_analyed_tweets= ~ error",
+          error
+        );
+      }
     };
-    if(state.user !== -1){
-
+    if (state.user !== -1) {
       fetch_analyed_tweets();
     }
   }, [state.user]);
   // fetch total summary of current user
   useEffect(() => {
     const fetch_total_summary = async () => {
-      let url = `http://${DOMAIN}/tweet-manager/total-summary/${state.user}`;
-      let res = await axios.get(url);
+      try {
+        let url = `http://${DOMAIN}/tweet-manager/total-summary/${state.user}`;
+        let res = await axios.get(url);
 
-      let total_summary = res.data;
+        let total_summary = res.data;
 
-      dispatch({
-        type: "FETCH_TOTAL_SUMMARY",
-        payload: { total_summary },
-      });
+        dispatch({
+          type: "FETCH_TOTAL_SUMMARY",
+          payload: { total_summary },
+        });
+      } catch (error) {
+        console.log(
+          "🚀 ~ file: Dashboard.context.js ~ line 78 ~ constfetch_total_summary= ~ error",
+          error
+        );
+      }
     };
-    if(state.user !== -1){
-
-      fetch_total_summary(); 
+    if (state.user !== -1) {
+      fetch_total_summary();
     }
   }, [state.user]);
 
   // fetch time series summary of current user
   useEffect(() => {
     const fetch_time_series_summary = async () => {
-      let url = `http://${DOMAIN}/tweet-manager/time-series-summary/${state.user}`;
-      let res = await axios.get(url);
+      try {
+        let url = `http://${DOMAIN}/tweet-manager/time-series-summary/${state.user}`;
+        let res = await axios.get(url);
 
-      let time_series_summary = res.data;
+        let time_series_summary = res.data;
 
-      dispatch({
-        type: "FETCH_TIME_SERIES_SUMMARY",
-        payload: { time_series_summary },
-      });
+        dispatch({
+          type: "FETCH_TIME_SERIES_SUMMARY",
+          payload: { time_series_summary },
+        });
+      } catch (error) {
+        console.log(
+          "🚀 ~ file: Dashboard.context.js ~ line 104 ~ constfetch_time_series_summary= ~ error",
+          error
+        );
+      }
     };
-    if(state.user !== -1){
-
+    if (state.user !== -1) {
       fetch_time_series_summary();
     }
   }, [state.user]);
