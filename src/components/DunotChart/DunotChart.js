@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
 import { useDashboardPageContext } from "../../pages/DashboardPage/Dashboard.context";
 
@@ -100,6 +101,20 @@ const renderActiveShape = (props) => {
 
 const DunotChart = (props) => {
   const { total_summary } = useDashboardPageContext();
+  // const empty = {};
+
+  // Object.keys(empty).length === 0 && empty.constructor === Object;
+  const [isEmpty, setIsEmpty] = useState(true);
+  useEffect(() => {
+    if (
+      Object.keys(total_summary).length === 0 &&
+      total_summary.constructor === Object
+    ) {
+      setIsEmpty(true);
+    } else {
+      setIsEmpty(false);
+    }
+  }, [total_summary]);
   const data = [
     { name: "Positive", value: total_summary.positive },
     { name: "Negative", value: total_summary.negative },
@@ -122,18 +137,20 @@ const DunotChart = (props) => {
         // style={{ border: $_border_body }} # don't use border here
       >
         <PieChart style={{ width: "100%", height: "100%" }}>
-          <Pie
-            activeIndex={state.activeIndex}
-            activeShape={renderActiveShape}
-            data={data}
-            cx="50%"
-            cy="50%"
-            innerRadius="35%"
-            outerRadius="50%"
-            fill={$_secondary_text_color}
-            dataKey="value"
-            onMouseEnter={onPieEnter}
-          />
+          {!isEmpty && (
+            <Pie
+              activeIndex={state.activeIndex}
+              activeShape={renderActiveShape}
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius="35%"
+              outerRadius="50%"
+              fill={$_secondary_text_color}
+              dataKey="value"
+              onMouseEnter={onPieEnter}
+            />
+          )}
         </PieChart>
       </ResponsiveContainer>
     </>
