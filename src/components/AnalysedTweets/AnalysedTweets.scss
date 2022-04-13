@@ -69,12 +69,29 @@
   &__text{
     // width 
     // total - 16*2 - 32*
+     
+    height: 52rem;
+    overflow-y: hidden;
     width:-webkit-fill-available;
     width:-moz-available;
     margin: 0 16rem;
 
+    &-item{
+
+    display: table-cell;
+    vertical-align: middle;
+    height: 52rem;
+    }
+
     &--head{
-      font-weight: 700;
+    font-weight: 700;
+   
+
+    &-item{
+    display: table-cell;
+    vertical-align: middle;
+    height: 52rem;
+    }
     }
   }
 

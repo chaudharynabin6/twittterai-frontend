@@ -22,7 +22,9 @@ const AnalysedTweets = (props) => {
             <span className="tweet__sentiment-status tweet__sentiment-status--head">
               Status
             </span>
-            <span className="tweet__text tweet__text--head">Tweet</span>
+            <div className="tweet__text tweet__text--head">
+              <span className="tweet__text--head-item">Tweet</span>
+            </div>
             <span className="tweet__date tweet__date--head">Tweet ID</span>
           </div>
           <div className="analysed-tweets__scroll-view">
@@ -70,7 +72,9 @@ const AnalysedTweets = (props) => {
                   >
                     {item.label}
                   </span>
-                  <span className="tweet__text">{item.text}</span>
+                  <div className="tweet__text">
+                    <span className="tweet__text-item">{item.text}</span>
+                  </div>
                   <span className="tweet__date">{item.tweet_id}</span>
                 </div>
               );
