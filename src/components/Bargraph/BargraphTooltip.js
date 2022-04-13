@@ -37,7 +37,6 @@ const renderCustomizedLabel = ({
 };
 const BargraphTooltip = (props) => {
   const data = props.data;
-  console.log(data);
   return (
     <ResponsiveContainer width={"100%"} height="100%">
       <PieChart>
@@ -54,7 +53,9 @@ const BargraphTooltip = (props) => {
           label={renderCustomizedLabel}
         >
           {data.map((entry, index) => (
-            <Cell fill={COLORS[index % COLORS.length]}>10</Cell>
+            <Cell key={index} fill={COLORS[index % COLORS.length]}>
+              10
+            </Cell>
           ))}
         </Pie>
       </PieChart>
