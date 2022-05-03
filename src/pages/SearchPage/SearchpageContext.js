@@ -20,10 +20,8 @@ const SearchPageProvider = ({ children }) => {
   const searchUser = async (user) => {
     user = user.toLowerCase().split(" ").join("");
     let url = `http://${DOMAIN}/search/user/${user}`;
-    console.log(url);
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
     if (data?.data && data.data.length > 0) {
       let user = data.data[0];
       user.user_id = user.id;
