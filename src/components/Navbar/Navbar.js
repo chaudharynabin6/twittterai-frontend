@@ -24,20 +24,28 @@ const Navbar = () => {
         </div> */}
         {/* <div className="util__border"></div> */}
         <div className="navbar__items">
-          <Link to={"/search"}>
+          {/* <Link to={"/search"}>
             <div className="navbar__item">
               <label className="navbar__item__icon-container">
                 <PersonSearchIcon className="navbar__item__icon" />
               </label>
               <label className="navbar__item__name">Search</label>
             </div>
-          </Link>
-          <Link to="/bargraph">
+          </Link> */}
+          {/* <Link to="/bargraph">
             <div className="navbar__item">
               <label className="navbar__item__icon-container">
                 <AnalyticsIcon className="navbar__item__icon" />
               </label>
               <label className="navbar__item__name">Bargraph</label>
+            </div>
+          </Link> */}
+          <Link to={"/tweet"}>
+            <div className="navbar__item">
+              <label className="navbar__item__icon-container">
+                <PersonSearchIcon className="navbar__item__icon" />
+              </label>
+              <label className="navbar__item__name">Search</label>
             </div>
           </Link>
         </div>

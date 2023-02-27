@@ -1,0 +1,81 @@
+@import './../../scss/abstracts/variables.scss';
+
+
+.tweet-search{
+  // width: 630rem;
+  width: 1276rem;
+  margin:0 auto;
+  margin-top: 20rem;
+
+  border-left: $--border---body;
+  border-right: $--border---body;
+
+
+  
+}
+
+.tweet-search-bar{
+  margin: 0 auto;
+  font-size: 16rem;
+  width: 577rem;
+  height: 41rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+
+  & > img{
+    height: 22rem;
+  }
+}
+
+
+.tweet-search-input{
+  background-color: $--secondary---background--color;
+  display: flex;
+  height: 41rem;
+  width: 444rem;
+  align-items: center;
+  padding: 0 10rem;
+  border-radius: 30rem;
+
+  &:focus{
+      // box-shadow: $--drop-shadow-grey;
+      background-color: $--linear---white;
+    
+    
+  }
+  &:hover{
+    background-color: $--linear---white;
+  }
+
+
+  &>img{
+    height: 16rem;
+  }
+  &>input{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    padding: 5rem;
+    height: 41rem;
+    border: none;
+    background-color: transparent;
+    
+    padding: 10rem;
+
+
+    &:focus{
+      outline: none;
+      // box-shadow: $--drop-shadow-grey;
+      background-color: $--linear---white;
+
+      
+    }
+
+  
+  }
+
+ 
+
+
+}

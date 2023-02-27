@@ -43,6 +43,7 @@ import AnalysedTweets from "./components/AnalysedTweets/AnalysedTweets";
 import DashboardPage from "./pages/DashboardPage";
 import Navbar from "./components/Navbar/Navbar";
 import Bargraph from "./components/Bargraph/Bargraph";
+import TweetSearchPage from "./pages/TweetSearchPage";
 
 function App() {
   return (
@@ -71,6 +72,13 @@ function App() {
             <Route exact path="/bargraph">
               <div className="main">
                 <Bargraph />
+              </div>
+            </Route>
+          </Switch>
+           <Switch>
+            <Route exact path="/tweet">
+              <div className="main">
+                <TweetSearchPage />
               </div>
             </Route>
           </Switch>
