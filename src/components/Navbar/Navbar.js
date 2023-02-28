@@ -6,7 +6,7 @@ import "./Navbar.scss";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
-
+import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
 import PersonSearchOutlinedIcon from "@mui/icons-material/PersonSearchOutlined";
 import AnalyticsOutlinedIcon from "@mui/icons-material/AnalyticsOutlined";
 const Navbar = () => {
@@ -32,14 +32,14 @@ const Navbar = () => {
               <label className="navbar__item__name">Search</label>
             </div>
           </Link> */}
-          {/* <Link to="/bargraph">
+          <Link to="/text">
             <div className="navbar__item">
               <label className="navbar__item__icon-container">
-                <AnalyticsIcon className="navbar__item__icon" />
+                <FormatColorTextIcon className="navbar__item__icon" />
               </label>
-              <label className="navbar__item__name">Bargraph</label>
+              <label className="navbar__item__name">Text</label>
             </div>
-          </Link> */}
+          </Link>
           <Link to={"/tweet"}>
             <div className="navbar__item">
               <label className="navbar__item__icon-container">
