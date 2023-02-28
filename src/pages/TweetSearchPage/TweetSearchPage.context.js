@@ -18,11 +18,10 @@ const TweetSearchPageProvider = ({ children }) => {
     const searchTweets = async (keyword) => {
 
         try {
-            let url = `http://${DOMAIN}/search/${keyword}`;
+            let url = `http://${DOMAIN}/search/tweets/${keyword}`;
             let res = await axios.get(url);
 
-            let analysed_tweets_string = res.data;
-            let analysed_tweets = JSON.parse(analysed_tweets_string);
+            let analysed_tweets= res.data;
             console.log("🚀 ~ file: TweetSearchPage.context.js:25 ~ searchTweets ~ analysed_tweets:", typeof (analysed_tweets))
 
 
