@@ -1,20 +1,20 @@
 @import './../../scss/abstracts/variables.scss';
 
 
-.tweet-search{
+.tweet-search {
   // width: 630rem;
   width: 1276rem;
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: 20rem;
 
   border-left: $--border---body;
   border-right: $--border---body;
 
 
-  
+
 }
 
-.tweet-search-bar{
+.tweet-search-bar {
   margin: 0 auto;
   font-size: 16rem;
   width: 577rem;
@@ -24,13 +24,13 @@
   justify-content: space-around;
 
 
-  & > img{
+  &>img {
     height: 22rem;
   }
 }
 
 
-.tweet-search-input{
+.tweet-search-input {
   background-color: $--secondary---background--color;
   display: flex;
   height: 41rem;
@@ -39,43 +39,91 @@
   padding: 0 10rem;
   border-radius: 30rem;
 
-  &:focus{
-      // box-shadow: $--drop-shadow-grey;
-      background-color: $--linear---white;
-    
-    
+  &:focus {
+    // box-shadow: $--drop-shadow-grey;
+    background-color: $--linear---white;
+
+
   }
-  &:hover{
+
+  &:hover {
     background-color: $--linear---white;
   }
 
 
-  &>img{
+  &>img {
     height: 16rem;
   }
-  &>input{
+
+  &>input {
     width: -webkit-fill-available;
     width: -moz-available;
     padding: 5rem;
     height: 41rem;
     border: none;
     background-color: transparent;
-    
+
     padding: 10rem;
 
 
-    &:focus{
+    &:focus {
       outline: none;
       // box-shadow: $--drop-shadow-grey;
       background-color: $--linear---white;
 
-      
+
     }
 
-  
+
   }
 
- 
 
 
+
+}
+
+.tweet-search {
+
+  &__more {
+    display: block;
+
+  }
+
+  &__more-btn {
+    margin-top: 10rem;
+    margin-right: 10rem;
+    
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    &--more{
+      background-color: #4caf9b;
+      &:hover {
+          background-color: darken($color: #4caf9b, $amount: 25);
+        }
+      
+        &:active {
+          background-color: darken($color: #4caf9b, $amount: 25);
+          transform: translateY(4px);
+        }
+    }
+    &--red{
+      background-color: red;
+        &:hover {
+            background-color: darken($color: red, $amount: 25);
+          }
+        
+          &:active {
+            background-color: darken($color: red, $amount: 25);
+            transform: translateY(4px);
+          }
+    }
+   
+  }
 }

@@ -14,7 +14,11 @@ const TweetSearchPagePresenter = () => {
 
     const {
         analyzedTweets,
-        searchTweets
+        searchTweets,
+        moreTweets,
+        next_token,
+        keyword,
+        reset
     } = useTweetSearchPageContext();
 
 
@@ -57,6 +61,24 @@ const TweetSearchPagePresenter = () => {
 
                 {/* tweet results */}
                 <AnalyzedTweets analysed_tweets={analyzedTweets} />
+
+                {
+                    next_token && <div className="tweet-search__more">
+                        <button onClick={
+                            (event) => {
+                                moreTweets(keyword, next_token)
+                            }
+                        } className="tweet-search__more-btn tweet-search__more-btn--more">More Tweets</button>
+                        <button onClick={
+                            (e)=>{
+                                reset()
+                            }
+                        } className="tweet-search__more-btn tweet-search__more-btn--red">Reset</button>
+                    </div>
+                }
+                
+
+            
             </section>
         </>
     );

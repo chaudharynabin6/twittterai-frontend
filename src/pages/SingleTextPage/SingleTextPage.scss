@@ -58,6 +58,15 @@ $color: #0cf;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
+
+        &:hover {
+            background-color: darken($color: #4caf9b, $amount: 25);
+        }
+
+        &:active {
+            background-color: darken($color: #4caf9b, $amount: 25);
+            transform: translateY(4px);
+        }
     }
 
     &-result {
