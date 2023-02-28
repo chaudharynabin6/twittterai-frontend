@@ -10,18 +10,12 @@ const TopBar = () => {
       <section className="topbar-container">
         <div className="topbar">
           <div className="topbar__page-info">
-            <div className="topbar__page">
-              <div className="topbar__page-link">
-                <img
-                  className="topbar__home-icon"
-                  src={home_breadcrumbs}
-                  alt=""
-                />
-                <label className="topbar__page-location">
-                  / pages / Analytics
-                </label>
-              </div>
-              <label className="topbar__page-title">Analytics</label>
+            <div>
+              Sentimental
+            </div>
+            <div className="topbar__page-divider"></div>
+            <div>
+              Analysis
             </div>
           </div>
           <div className="topbar__notification">
