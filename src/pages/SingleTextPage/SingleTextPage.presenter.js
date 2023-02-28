@@ -50,7 +50,10 @@ const SingleTextPagePresenter = () => {
 
                 <div className="single-text-result">
                     {/* tweet results */}
-                    <AnalyzedTweets analysed_tweets={analyzedTweets} />
+                    {
+                        analyzedTweets.length > 0 && <AnalyzedTweets analysed_tweets={analyzedTweets} />
+                    }
+                   
                 </div>
 
             </section>
