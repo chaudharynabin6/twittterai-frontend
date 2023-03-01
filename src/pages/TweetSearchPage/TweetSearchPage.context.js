@@ -2,6 +2,7 @@ import React, { useContext, useReducer } from "react";
 import TweetSearchPageReducer from "./TweetSearchPage.reducer";
 import axios from "axios";
 import { search_tweet_action,reset_action } from "./TweetSearchPage.actions";
+import { arrayToExcel } from "../../utils/ArrayToExcelConverter";
 
 
 const DOMAIN = process.env.REACT_APP_DOMAIN;
@@ -66,6 +67,14 @@ const TweetSearchPageProvider = ({ children }) => {
             payload:initialState
         });
     }
+
+    const downloadExcel = () => {
+        let data = [["Sentiment","Text","Score"]]
+        state.analyzedTweets.forEach((item)=>{
+            data.push([item.label,item.text,item.score])
+        })
+        arrayToExcel(data,state.keyword)
+    }
     
 
     return (
@@ -75,7 +84,8 @@ const TweetSearchPageProvider = ({ children }) => {
                 // functions
                 searchTweets,
                 moreTweets,
-                reset
+                reset,
+                downloadExcel
             }}
         >
             {children}

@@ -19,7 +19,8 @@ const TweetSearchPagePresenter = () => {
         moreTweets,
         next_token,
         keyword,
-        reset
+        reset,
+        downloadExcel
     } = useTweetSearchPageContext();
 
 
@@ -84,6 +85,12 @@ const TweetSearchPagePresenter = () => {
                                 reset()
                             }
                         } className="tweet-search__more-btn tweet-search__more-btn--red">Reset</button>
+
+                        <button onClick={
+                            (e) => {
+                                downloadExcel()
+                            }
+                        } className="tweet-search__more-btn tweet-search__more-btn--red">Download Excel</button>
                     </div>
                 }
                 
