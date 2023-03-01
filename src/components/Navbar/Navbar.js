@@ -9,6 +9,8 @@ import AnalyticsIcon from "@mui/icons-material/Analytics";
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
 import PersonSearchOutlinedIcon from "@mui/icons-material/PersonSearchOutlined";
 import AnalyticsOutlinedIcon from "@mui/icons-material/AnalyticsOutlined";
+import HomeIcon from '@mui/icons-material/Home';
+
 const Navbar = () => {
   return (
     <>
@@ -32,6 +34,15 @@ const Navbar = () => {
               <label className="navbar__item__name">Search</label>
             </div>
           </Link> */}
+
+          <Link to={"/"}>
+            <div className="navbar__item">
+              <label className="navbar__item__icon-container">
+                <HomeIcon className="navbar__item__icon" />
+              </label>
+              <label className="navbar__item__name">Home</label>
+            </div>
+          </Link>
           <Link to="/text">
             <div className="navbar__item">
               <label className="navbar__item__icon-container">
