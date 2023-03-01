@@ -8,7 +8,10 @@ const HomePagePresenter = () => {
 
     return (
         <>
-            <h1>Welcome to <br></br> sentimental analysis</h1>
+        <section className="homepage-container">
+                <h1>Welcome to <br></br> sentimental analysis</h1>
+        </section>
+            
         </>
     )
 }

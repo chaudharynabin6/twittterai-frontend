@@ -1,0 +1,11 @@
+@import './../../scss/abstracts/variables.scss';
+
+.homepage-container {
+    // width: 630rem;
+    width: 1276rem;
+    margin: 0 auto;
+    margin-top: 20rem;
+
+    border-left: $--border---body;
+    border-right: $--border---body;
+}
