@@ -100,24 +100,24 @@ const renderActiveShape = (props) => {
 };
 
 const DunotChart = (props) => {
-  const { total_summary } = useDashboardPageContext();
+  const { dunotData } = props;
   // const empty = {};
 
   // Object.keys(empty).length === 0 && empty.constructor === Object;
   const [isEmpty, setIsEmpty] = useState(true);
   useEffect(() => {
     if (
-      Object.keys(total_summary).length === 0 &&
-      total_summary.constructor === Object
+      Object.keys(dunotData).length === 0 &&
+      dunotData.constructor === Object
     ) {
       setIsEmpty(true);
     } else {
       setIsEmpty(false);
     }
-  }, [total_summary]);
+  }, [dunotData]);
   const data = [
-    { name: "Positive", value: total_summary.positive },
-    { name: "Negative", value: total_summary.negative },
+    { name: "Positive", value: dunotData.positive },
+    { name: "Negative", value: dunotData.negative },
   ];
   let [state, setState] = useState({
     activeIndex: 0,

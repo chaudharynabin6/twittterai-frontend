@@ -1,5 +1,4 @@
 import { useTweetSearchPageContext } from "./TweetSearchPage.context"
-import AnalyzedTweets from "../../components/AnalyzedTweets/AnalyzedTweets"
 import { useRef } from "react";
 // scss
 import "./TweetSearchPage.scss"
@@ -10,6 +9,7 @@ import search from "./../../assets/icons/search.svg";
 import more_horiz from "./../../assets/icons/more_horiz.svg";
 import cancel from "./../../assets/icons/cancel.svg";
 import AnalyzedTweetsWithScrollListener from "../../components/AnalyzedTweetsWithScrollListener/AnalyzedTweetsWithScrollListener";
+import DunotChart from "../../components/DunotChart/DunotChart";
 
 const TweetSearchPagePresenter = () => {
 
@@ -20,7 +20,8 @@ const TweetSearchPagePresenter = () => {
         next_token,
         keyword,
         reset,
-        downloadExcel
+        downloadExcel,
+        dunotData
     } = useTweetSearchPageContext();
 
 
@@ -61,19 +62,24 @@ const TweetSearchPagePresenter = () => {
                     </div>
                 </div>
 
+
+
+                {
+                    next_token && <div className="tweet-search__dunot-chart">
+                        <DunotChart dunotData={dunotData} />
+                    </div>
+                }
                 {/* tweet results */}
                 {
 
                     analyzedTweets.length > 0 && <AnalyzedTweetsWithScrollListener analysed_tweets={analyzedTweets} onScrollToEnd={() => {
                         moreTweets(keyword, next_token);
-
-                        console.log("🚀 ~ file: TweetSearchPage.presenter.js:71 ~ TweetSearchPagePresenter ~ next_token:", next_token)
                     }} />
                 }
-                
 
+               
                 {
-                    
+
                     next_token && <div className="tweet-search__more">
                         <button onClick={
                             (event) => {
@@ -81,7 +87,7 @@ const TweetSearchPagePresenter = () => {
                             }
                         } className="tweet-search__more-btn tweet-search__more-btn--more">More Tweets</button>
                         <button onClick={
-                            (e)=>{
+                            (e) => {
                                 reset()
                             }
                         } className="tweet-search__more-btn tweet-search__more-btn--red">Reset</button>
@@ -93,9 +99,10 @@ const TweetSearchPagePresenter = () => {
                         } className="tweet-search__more-btn tweet-search__more-btn--red">Download Excel</button>
                     </div>
                 }
-                
 
-            
+
+
+
             </section>
         </>
     );

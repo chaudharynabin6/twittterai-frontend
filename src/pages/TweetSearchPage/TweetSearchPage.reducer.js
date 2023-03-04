@@ -1,4 +1,4 @@
-import { reset_action, search_tweet_action } from "./TweetSearchPage.actions"
+import { generate_dunot_data, reset_action, search_tweet_action } from "./TweetSearchPage.actions"
 
 
 const TweetSearchPageReducer = (state,action) => {
@@ -24,6 +24,15 @@ const TweetSearchPageReducer = (state,action) => {
             
 
 
+        }
+
+        case  generate_dunot_data : {
+            
+
+            return {
+                ...state,
+                dunotData : action.payload.dunotData,
+            }
         }
 
         case reset_action: {
